@@ -3,7 +3,7 @@ import spacy
 from flask import Flask, jsonify, Blueprint
 from flask_restful import Resource, Api
 
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en")
 
 
 class POSifiedText(markovify.Text):
