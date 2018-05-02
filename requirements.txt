@@ -12,7 +12,6 @@ cymem==1.31.2
 Cython==0.27.3
 cytoolz==0.9.0
 dill==0.2.7.1
-en-core-web-sm==2.0.0
 Flask==1.0.2
 Flask-Jsonpify==1.5.0
 Flask-RESTful==0.3.6

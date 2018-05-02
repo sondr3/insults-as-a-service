@@ -57,4 +57,4 @@ api.add_resource(Insults, '/insults')
 app.register_blueprint(api_bp)
 
 if __name__ == '__main__':
-    app.run(port=5432, debug=True)
+    app.run(port=5432)
