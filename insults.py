@@ -21,10 +21,16 @@ with open("luther.txt") as f:
 with open("insults.txt") as f:
     insults = f.read()
 
+with open("shakespeare.txt") as f:
+    shakespeare = f.read()
+
 text_model_luther = markovify.Text(luther, state_size=3)
 text_model_insults = markovify.Text(insults, state_size=3)
+text_model_shakespeare = markovify.Text(shakespeare, state_size=3)
 
-model_combo = markovify.combine([text_model_luther, text_model_insults], [1.5, 1])
+model_combo = markovify.combine([
+    text_model_luther, text_model_insults, text_model_shakespeare],
+    [1, 1, 1])
 
 for i in range(5):
     print(model_combo.make_short_sentence(140, tries=25))
