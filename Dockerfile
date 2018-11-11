@@ -1,13 +1,10 @@
-FROM python:stretch
+FROM python:3.7
 
-WORKDIR /usr/src/insults
+COPY . /app
+WORKDIR /app
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-EXPOSE 5432
+RUN pip install pipenv
+RUN pipenv install --system --deploy
 
 RUN python -m spacy download en
 CMD python insults.py
